@@ -1,0 +1,13 @@
+[Unit]
+Description=WhatsApp Poller Service
+After=network.target
+
+[Service]
+ExecStart=%h/instructions/whatsapp/.venv/bin/python -u %h/instructions/whatsapp/agent.py
+WorkingDirectory=%h/instructions/whatsapp
+Restart=always
+RestartSec=10
+EnvironmentFile=%h/.config/whatsapp-agent/twilio.env
+
+[Install]
+WantedBy=default.target

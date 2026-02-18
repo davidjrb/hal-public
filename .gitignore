@@ -1,0 +1,8 @@
+*.venv/
+whatsapp/inbox.jsonl
+whatsapp/agent_state.json
+.env
+*.pyc
+__pycache__/
+config/twilio.env
+trail.jsonl
