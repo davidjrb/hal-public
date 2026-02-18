@@ -72,8 +72,6 @@ Session memory is persistent. HAL remembers what you talked about within a sessi
 
 **Polling over webhooks** — The VM has no public IP. Polling every 5 seconds avoids tunneling, port forwarding, or exposing the machine to the internet.
 
-**opencode CLI over direct API** — The agent calls GPT-5.2 through the `opencode` CLI rather than the OpenAI API directly. This is intentional: `opencode` authenticates via OAuth against an existing ChatGPT Team subscription, so there's no separate API billing. A direct API approach was attempted and reverted because the API requires its own billing plan.
-
 **Per-user sessions** — Each WhatsApp user gets a persistent conversation session stored in `agent_state.json`. Sessions are managed via opencode's `--session` flag. The identity prompt (HAL_IDENTITY.md) is sent only on the first message of a session to save tokens.
 
 **Session aliases** — Session IDs are opaque (`ses_abc123...`). Users can assign memorable names with `--rename` and switch between sessions with `--resume`.
